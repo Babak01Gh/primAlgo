@@ -25,27 +25,27 @@ graph = {
     ]
 }
 
-key = {}
-parent = {}
+key = {} #keeps minimum value of each vertix to arrive.
+parent = {} #keeps parent vertix of each one for helping with create branches
+
 def prim(graph,start):
     for vert in graph:
         if vert == start:
             key[vert] = 0
-            parent[vert] = 'v1'
         else:
             key[vert] = float('inf')
             parent[vert] = None
     
-    solution = []
-    vertixes = list(graph.keys())
+    solution = [] #this is gonna keep branches
+    vertixes = list(graph.keys()) #this is using for check is every vertix done or not
     while vertixes:
-        u = min(vertixes , key=lambda x:key[x])
+        u = min(vertixes , key=lambda x:key[x]) #get minimum vertix with minimum key
         vertixes.pop(vertixes.index(u))
-        for neigh in graph[u]:
+        for neigh in graph[u]: #foreach neighbor(near) vertix to U do
             if neigh[0] in vertixes and key[neigh[0]] > neigh[1]:
                 key[neigh[0]] = neigh[1]
                 parent[neigh[0]] = u
-    for e in parent:
+    for e in parent: #foreach branches that we found , we add them to solution list
         solution.append((parent[e],e))
     return solution
         
