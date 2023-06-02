@@ -16,7 +16,8 @@ and finally we add (parent of vertix , vertix) double (minimums)
 in solution array.
 
 ## input graph
-```graph = {
+```
+graph = {
     'v1':[
         ('v2',1),
         ('v3',3)
