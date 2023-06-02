@@ -14,3 +14,38 @@ we do this on every vertix one by one.
 give the minimum amount to each vertix's key and to it's parent is the vertix that we're checking it (u).
 and finally we add (parent of vertix , vertix) double (minimums)
 in solution array.
+
+## input graph
+```graph = {
+    'v1':[
+        ('v2',1),
+        ('v3',3)
+    ],
+    'v2':[
+        ('v1',1),
+        ('v3',3),
+        ('v4',6)
+    ],    
+    'v3':[
+        ('v1',3),
+        ('v4',4),
+        ('v2',3),
+        ('v5',2)
+    ],
+    'v4':[
+        ('v2',6),
+        ('v3',4),
+        ('v5',5)
+    ],
+    'v5':[
+        ('v3',2),
+        ('v4',5)
+    ]
+}
+```
+
+## output
+```
+minimum spanning tree's edges :
+    [('v1', 'v2'), ('v1', 'v3'), ('v3', 'v4'), ('v3', 'v5')]
+```
